@@ -1,0 +1,21 @@
+//Задание 1. Сколько раз встречается максимум
+
+#include <stdio.h>
+
+int main() {
+int N, max_num, count, num;
+scanf("%d", &N);
+scanf("%d", &max_num);
+count = 1;
+for (int i = 1; i < N; ++i) {
+scanf("%d", &num); // Считываем очередное число
+if ((num ^ max_num) < 0) {
+max_num = num; // Обновляем max_num
+count = 1; // Сбрасываем счетчик
+} else if (num == max_num) {
+++count;
+}
+}
+printf("%d\n", count);
+return 0;
+}
